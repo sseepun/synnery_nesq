@@ -1,0 +1,50 @@
+
+/* Tree */
+.tree path{stroke:#f37736!important;}
+.tree .node{width:160px; padding:0; text-align:center;}
+.tree .node > p:first-child{
+  display:flex; align-items:center; justify-content:center; height:90px;
+  position:relative; width:100%; padding:6px; font-size:22px; font-weight:500;
+  line-height:.95;
+}
+.tree .node > p:first-child::before{
+  content:''; position:absolute; border-radius:50%; background:#e76a04;
+}
+
+.tree .node.root{width:260px;}
+.tree .node.root > p:first-child{
+  height:140px; font-size:30px; font-weight:600; color:#f37736; background:#ffffff;
+  box-shadow:0px 5px 20px 10px rgba(0,0,0,.08); border-radius:22px;
+}
+.tree .node.root > p:first-child::after{
+  bottom:-7px; left:calc(50% - 7px); width:10px; height:10px; border:2px solid #ffffff;
+}
+
+.tree .node.node-1 > p:first-child{
+  background-image:linear-gradient(135deg,#f5c124,#e76800);
+  color:#ffffff; border:1px solid #e76800; border-radius:20px;
+}
+.tree .node.node-1 > p:first-child::before{
+  top:-5px; left:calc(50% - 5px); width:10px; height:10px;
+}
+
+.tree .node.node-2{width:136px;}
+.tree .node.node-2 > p:first-child{
+  height:76px; font-size:20px; font-weight:500; color:#000000; background:#ffffff;
+  box-shadow:0px 5px 20px 10px rgba(0,0,0,.04); border-radius:16px;
+}
+.tree .node.node-2 > p:first-child::before{
+  top:calc(50% - 4px); left:-4px; width:8px; height:8px;
+}
+
+.tree .node-wrapper{position:relative; width:100%; padding:18px 0 0 20px;}
+.tree .node-wrapper::before{
+  content:''; position:absolute; top:-4px; bottom:38px; left:10px; width:1px;
+  background:#f37736;
+}
+.tree .node-wrapper .node{position:relative; margin:10px 0 0 0;}
+.tree .node-wrapper .node:first-child{margin:0;}
+.tree .node-wrapper .node::before{
+  content:''; position:absolute; top:calc(50% - .5px); right:100%; width:10px;
+  height:1px; background:#f37736;
+}
