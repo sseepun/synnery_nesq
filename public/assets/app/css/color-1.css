@@ -288,6 +288,13 @@ table.table-report td{border-color:#ffffff;}
 .info-01 .block.block-left .img-bg{background:#ffffff;}
 
 
+/* Section Counter */
+.section-counter .counter::before,
+.section-counter .counter::after{background:#ffffff;}
+.section-counter .counter > .text{color:#ffffff;}
+.section-counter .counter.active > .text{color:#000000; background:#ffffff;}
+
+
 /* Tabs 01 */
 .tab-container .tabs.tabs-01 .tab::before{background:#ffffff;}
 .tab-container .tabs.tabs-01 .tab > .text{color:#ffffff;}

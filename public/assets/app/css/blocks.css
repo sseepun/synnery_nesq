@@ -187,6 +187,35 @@
 }
 
 
+/* Section Counter */
+.section-counter{
+  position:fixed; top:calc(50vh - 6rem); left:1rem; pointer-events:none; z-index:98;
+}
+.section-counter > .wrapper{display:block; position:relative;}
+.section-counter .counter{
+  position:relative; display:flex; padding:0 0 0 1rem; transition:padding .45s;
+}
+.section-counter .counter.active{padding-bottom:5rem;}
+.section-counter .counter::before{
+  content:''; position:absolute; top:.6875rem; left:0;
+  width:.4375rem; height:.4375rem; border-radius:50%;
+}
+.section-counter .counter::after{
+  content:''; position:absolute; top:1.6875rem; left:.1875rem;
+  width:1px; height:0; transition:height .45s;
+}
+.section-counter .counter.active::after{height:5.25rem;}
+.section-counter .counter:last-child{padding-bottom:0!important;}
+.section-counter .counter:last-child::after{display:none;}
+.section-counter .counter > .text{
+  padding:.3125rem .625rem; font-size:.9375rem; font-weight:400;
+  border-radius:1000em; transition:background .45s, color .45s;
+}
+@media screen and (max-width:1299.98px){
+  .section-counter{display:none;}
+}
+
+
 /* Tabs 01 */
 .tab-container .tabs.tabs-01{display:flex; align-items:center; flex-wrap:wrap;}
 .tab-container .tabs.tabs-01 .tab{

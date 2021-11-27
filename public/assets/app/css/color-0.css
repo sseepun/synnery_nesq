@@ -337,6 +337,13 @@ table.table-report tr.highlight > td:first-child{background:#f89609;}
 .info-01 .block.block-left .img-bg{background:#5e98a6;}
 
 
+/* Section Counter */
+.section-counter .counter::before,
+.section-counter .counter::after{background:#000000;}
+.section-counter .counter > .text{color:#000000;}
+.section-counter .counter.active > .text{color:#ffffff; background:#0a2471;}
+
+
 /* Tabs 01 */
 .tab-container .tabs.tabs-01 .tab::before{background:#737373;}
 .tab-container .tabs.tabs-01 .tab > .text{color:#000000;}

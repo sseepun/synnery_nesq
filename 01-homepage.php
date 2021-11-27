@@ -7,7 +7,7 @@
 <body class="loading">
 	<?php include_once('include/topnav.php'); ?>
 
-	<section class="banner-01" data-section="0">
+	<section class="banner-01" data-counter="0">
 		<div class="slide-container">
 			<div class="slides">
 				<?php for($i=0; $i<6; $i++){?>
@@ -72,7 +72,7 @@
 		</div>
 	</section>
 
-	<div class="content-03 color-theme-black" data-section="1">
+	<section class="content-03 color-theme-black" data-counter="1">
 		<div class="section-padding pos-relative">
 			<div class="bg-content img-theme" style="background-image:url('public/assets/app/img/bg/content-01.jpg');"></div>
 			<div class="container pos-relative">
@@ -176,9 +176,9 @@
 			</div>
 		</div>
 		<div class="ss-pattern-bottom gray"></div>
-	</div>
+	</section>
 
-	<section class="content-01 section-padding" data-section="2">
+	<section class="content-01 section-padding" data-counter="2">
 		<div class="container">
 			<div class="tab-container">
 				<div class="content-options">
@@ -288,7 +288,7 @@
 		</div>
 	</section>
 
-	<section class="content-02 section-padding" data-section="3">
+	<section class="content-02 section-padding" data-counter="3">
 		<div class="container">
 			<div class="tab-container">
 				<div class="content-options">
@@ -392,7 +392,12 @@
 	</section>
 
 	<div class="section-counter">
-		
+		<div class="wrapper">
+			<div class="counter"><div class="text">ส่วนหลัก</div></div>
+			<div class="counter"><div class="text">การประเมินภายนอก</div></div>
+			<div class="counter"><div class="text">สื่อสารองค์กร</div></div>
+			<div class="counter"><div class="text">คลังความรู้</div></div>
+		</div>
 	</div>
 	
 	<?php include_once('include/footer.php'); ?>

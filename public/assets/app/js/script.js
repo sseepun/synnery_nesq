@@ -68,6 +68,38 @@ $(function(){ 'use strict';
         footer.find('#footer-sitemap').slideToggle();
     });
 
+
+    // Section Counter
+    var sectionCounter = $('.section-counter'),
+        sectionCounters = sectionCounter.find('.counter'),
+        counterSections = $('section[data-counter]');
+    var sectionIntervals = [];
+    function checkSectionCounter(st){
+        if(sectionCounter.length && counterSections.length){
+            sectionIntervals = [];
+            counterSections.each(function(){
+                let p = $(this).position(),
+                    h = $(this).height();
+                sectionIntervals.push([ 
+                    p.top - 8*bodySize, 
+                    p.top + h - 8*bodySize,
+                    $(this).data('counter')
+                ]);
+            });
+
+            let activeIndex = null;
+            sectionIntervals.forEach(function(d){
+                if(d[0] < st && st < d[1]){
+                    activeIndex = d[2];
+                }
+            });
+            sectionCounters.removeClass('active');
+            if(activeIndex !== null){
+                sectionCounters.eq(activeIndex).addClass('active');
+            }
+        }
+    }
+
     
     // On Scroll
     checkOnScroll( $(window).scrollTop() );
@@ -80,6 +112,7 @@ $(function(){ 'use strict';
         }else{
             backToTop.removeClass('active');
         }
+        checkSectionCounter(st);
     }
     
 
