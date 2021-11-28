@@ -4,17 +4,27 @@ nav.super-topnav{position:relative; display:block; width:100%; z-index:95;}
 nav.super-topnav .options{width:100%; display:flex; align-items:center;}
 nav.super-topnav .option{display:flex; align-items:center;}
 nav.super-topnav .option-btn{position:relative;}
-nav.super-topnav .option-btn > *{
+nav.super-topnav .option-btn > *:first-child{
 	display:flex; align-items:center; justify-content:center; white-space:nowrap;
 	height:2.75rem; min-width:3.75rem; padding:.25rem .5rem;
 	transition:opacity .25s;
 }
 nav.super-topnav .option-btn:hover > a{opacity:.85;}
-nav.super-topnav .option-btn > * .icon{
+nav.super-topnav .option-btn > *:first-child .icon{
 	display:flex; align-items:center; justify-content:center;
 	height:2.25rem; width:2.25rem; font-size:1rem;
 }
-nav.super-topnav .option-btn > * .chev{font-size:1.5rem;}
+nav.super-topnav .option-btn > *:first-child .chev{font-size:1.5rem;}
+nav.super-topnav .dropdown{
+	position:absolute; top:calc(100% + .5rem); left:0; right:0;
+	pointer-events:none; opacity:0; transition:top .3s, opacity .3s;
+}
+nav.super-topnav .option-btn:hover > .dropdown{pointer-events:auto; top:100%; opacity:1;}
+nav.super-topnav .dropdown .items{display:block; width:100%; padding:.25rem 0;}
+nav.super-topnav .dropdown .item{
+	display:block; width:100%; padding:.25rem .75rem; font-size:1rem; font-weight:500;
+	transition:color .25s, background .25s;
+}
 @media screen and (max-width:991.98px){
 	nav.super-topnav .options{display:block;}
 	nav.super-topnav .option{width:100%; justify-content:center;}
@@ -122,6 +132,10 @@ nav.footer .footer-icon > .icon{
 	border-radius:50%; margin:0 auto; transition:background .25s, color .25s, box-shadow .25s;
 }
 nav.footer .footer-icon:hover > .icon{box-shadow:0px 3px 12px 6px rgba(0,0,0,.2);}
+nav.footer .footer-icon > .icon svg{
+	display:block; width:auto; max-width:44%; height:auto; max-height:44%;
+	transition:fill .25s;
+}
 nav.footer .title{
 	display:block; margin:1.25rem 0 0 0; padding:.3125rem 0;
 	font-size:1rem; font-weight:600; transition:color .25s;

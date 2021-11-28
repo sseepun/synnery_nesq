@@ -68,8 +68,8 @@ select:focus, textarea:focus{
 .btn-circle{color:#000000!important; background:#ffffff!important;}
 .btn-circle:hover, .btn-circle:active{background:#f9f9f9!important;}
 .btn-circle.btn-theme{background:#ffffff!important; color:#000000!important;}
-.btn-circle.btn-theme.btn-theme-1{background:#232323!important; color:#dfa710!important;}
-.btn-circle.btn-theme.btn-theme-2{background:#232323!important; color:#0dcaf3!important;}
+.btn-circle.btn-theme.btn-theme-1{background:#232323!important; color:#ffffff!important;}
+.btn-circle.btn-theme.btn-theme-2{background:#232323!important; color:#ffff00!important;}
 .btn-circle.dark{background:#232323!important; color:#ffffff!important;}
 .btn-circle.dark:hover, .btn-circle.dark:active{background:#000000!important;}
 
@@ -132,7 +132,9 @@ select:focus, textarea:focus{
 
 /* Super Topnav */
 nav.super-topnav{background:#000000; color:#ffff00; border-bottom:1px solid #ffff00;}
-nav.super-topnav .option-btn > *{background:#ffff00; color:#000000;}
+nav.super-topnav .option-btn > *:first-child{background:#ffff00; color:#000000;}
+nav.super-topnav .dropdown .items{background:#ffff00;}
+nav.super-topnav .dropdown .item{color:#000000;}
 
 /* Topnav */
 nav.topnav{background:#000000; color:#ffff00; border-bottom:1px solid #ffff00;}
@@ -155,6 +157,8 @@ nav.footer{background:#000000; color:#ffff00;}
 nav.footer .footer-icon{color:#000000;}
 nav.footer .footer-icon > .icon{background:#000000; color:#ffff00;}
 nav.footer .footer-icon:hover > .icon{background:#ffff00; color:#000000;}
+nav.footer .footer-icon > .icon svg{fill:#ffff00;}
+nav.footer .footer-icon:hover > .icon svg{fill:#000000;}
 nav.footer .title, nav.footer .item, nav.footer .subitem{color:#ffff00;}
 nav.footer .item:hover{background:#ffff00; color:#000000;}
 nav.footer .subitem > .chev{color:#ffff00;}
@@ -273,6 +277,13 @@ table.table-progress .progress-tab::before{background:#000000; border-color:#fff
 table.table-progress .progress-tab > .bar{background:#ffff00;}
 table.table-report th{background:#ffff00; color:#000000;}
 table.table-report td{border-color:#ffff00;}
+
+
+/* Banner 01 */
+.banner-01 .preview-wrapper{background:#000000;}
+.banner-01 .slick-current .preview-wrapper{background:#ffff00;}
+.banner-01 .preview-wrapper > .img-bg{filter:grayscale(100%)blur(3px);}
+.banner-01 .slick-current .preview-wrapper > .img-bg{filter:grayscale(100%)blur(0);}
 
 
 /* Content 02 */

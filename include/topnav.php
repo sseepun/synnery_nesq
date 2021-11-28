@@ -23,6 +23,12 @@
 							<em class="zmdi zmdi-chevron-down"></em>
 						</div>
 					</a>
+					<div class="dropdown">
+						<div class="items">
+							<a class="item" href="#">EN</a>
+							<a class="item" href="#">TH</a>
+						</div>
+					</div>
 				</div>
 				<div class="option-btn">
 					<a class="type-03" href="#">

@@ -74,6 +74,16 @@ $(function(){ 'use strict';
         sectionCounters = sectionCounter.find('.counter'),
         counterSections = $('section[data-counter]');
     var sectionIntervals = [];
+    sectionCounters.click(function(e, i){
+        e.preventDefault();
+        var i = $(this).index();
+        var target = counterSections.filter('[data-counter="'+i+'"]');
+        if(target.length){
+            $('html, body').stop().animate({ 
+                scrollTop: target.position().top - 4*bodySize
+            }, 800 );
+        }
+    });
     function checkSectionCounter(st){
         if(sectionCounter.length && counterSections.length){
             sectionIntervals = [];
