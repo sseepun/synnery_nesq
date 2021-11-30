@@ -246,6 +246,23 @@ $(function(){ 'use strict';
     }
 
 
+    // Popup
+    var popupContainer = $('.popup-container');
+    if(popupContainer.length){
+        popupContainer.each(function(){
+            var slideContainer = $(this).find('.slide-container');
+            if(slideContainer.length){
+                slideContainer.find('.slides').slick({
+                    centerMode: false, centerPadding: 0, slidesToShow: 1, infinite: true,
+                    focusOnSelect: true, autoplay: false, speed: 900,
+                    arrows: false, dots: true, appendDots: slideContainer.find('.dots'),
+                    adaptiveHeight: true
+                });
+            }
+        });
+    }
+
+
     // Tab Container
     var tabContainers = $('.tab-container');
     if(tabContainers.length){

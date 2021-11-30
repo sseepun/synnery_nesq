@@ -6,6 +6,37 @@
 </head>
 <body class="loading">
 	<?php include_once('include/topnav.php'); ?>
+	
+	<div class="popup-container active" data-popup="subscribe">
+		<div class="wrapper">
+			<div class="popup-box border bcolor-white bg-white pt-3 pb-3 pl-3 pr-3">
+				<div class="close-btn btn-popup-toggle" data-popup="subscribe">
+					<div class="icon">
+						<div class="hamburger active">
+							<div></div><div></div><div></div>
+						</div>
+					</div>
+					<div class="text">ปิด</div>
+				</div>
+				<div class="slide-container">
+					<div class="slides">
+						<?php for($i=0; $i<3; $i++){?>
+							<div class="slide">
+								<img src="public/assets/app/img/content/popup-01.jpg" alt="Popup Content" />
+							</div>
+						<?php }?>
+					</div>
+					<div class="dots mt-4"></div>
+				</div>
+				<div class="d-flex ai-center jc-center mt-4">
+					<div class="form-check sm">
+						<input type="checkbox" class="form-check-input" id="show-toggle" value="1" title="General Checkbox Input" />
+						<label for="show-toggle">ไม่ต้องแสดงข้อความนี้อีก</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<section class="banner-01" data-counter="0">
 		<div class="slide-container">

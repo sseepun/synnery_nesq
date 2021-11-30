@@ -201,9 +201,13 @@ nav.footer .v-line{background:#ffffff;}
 
 
 /* Popup Container */
+.popup-container{background:rgba(0,0,0,.75);}
 .popup-container .popup-box{background:#000000; border:1px solid #ffffff;}
 .popup-container .popup-box > .img-bg{filter:grayscale(100%);}
 .popup-container .close-icon{background:#ffffff; color:#000000;}
+.popup-container .close-btn{background:#000000; color:#ffffff;}
+.popup-container .close-btn .icon{background:#ffffff;}
+.popup-container .close-btn .hamburger > *{background:#000000;}
 
 
 /* Semantic UI */

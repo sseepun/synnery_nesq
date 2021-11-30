@@ -238,8 +238,12 @@ nav.footer .v-line{background:#cdd5d5;}
 
 
 /* Popup Container */
+.popup-container{background:rgba(10,36,113,.75);}
 .popup-container .popup-box{background:#ffffff;}
-.popup-container .close-icon{background:#2f3136; color:#f89609;}
+.popup-container .close-icon{background:#2f3136; color:#0a2471;}
+.popup-container .close-btn{background:#0a2471; color:#ffffff;}
+.popup-container .close-btn .icon{background:#e4f0f7;}
+.popup-container .close-btn .hamburger > *{background:#0a2471;}
 
 
 /* Semantic UI */
