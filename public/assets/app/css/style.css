@@ -686,8 +686,11 @@ ul.ss-list > li::before{
 .tab-container{position:relative; display:block; width:100%;}
 .tab-container .tab{cursor:pointer;}
 .tab-container .tab-contents{position:relative; width:100%;}
-.tab-container .tab-content{display:none; position:relative; padding:0; margin:0;}
-.tab-container .tab-content.active{display:block;}
+.tab-container .tab-content{
+	display:none; position:relative; padding:0; margin:0; transition:opacity .25s;
+}
+.tab-container .tab-content.in{display:block; opacity:0;}
+.tab-container .tab-content.active{display:block; opacity:1;}
 
 
 /* Table */

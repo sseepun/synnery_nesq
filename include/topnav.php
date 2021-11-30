@@ -125,3 +125,51 @@
 	</div>
 </nav>
 <div class="sidenav-filter"></div>
+
+
+<!-- Option Nav -->
+<nav class="option-nav">
+	<div class="wrapper">
+
+		<div class="option-btn">
+			<a class="option-icon" href="#">
+				<div class="icon"><img src="public/assets/app/img/icon/access.svg" alt="Icon Main" /></div>
+				<div class="text">การเข้าถึง</div>
+				<div class="close"><img src="public/assets/app/img/icon/close.svg" alt="Icon Close" /></div>
+			</a>
+			<div class="dropdown">
+				<div class="wrapper">
+					<div class="items">
+						<div class="item">
+							<p>ขนาดตัวอักษร</p>
+							<div class="btns btn-set">
+								<a class="btn-font-size" href="#" data-size="13">ก</a>
+								<a class="btn-font-size active" href="#" data-size="16">ก</a>
+								<a class="btn-font-size" href="#" data-size="20">ก</a>
+							</div>
+						</div>
+						<div class="item">
+							<p>ความคมชัด</p>
+							<div class="btns">
+								<a class="btn btn-theme w-full" href="#" data-theme="0">ปกติ</a>
+							</div>
+							<div class="btns">
+								<a class="btn btn-theme btn-theme-1" href="#" data-theme="1">ขาวดำ</a>
+								<a class="btn btn-theme btn-theme-2" href="#" data-theme="2">ตาบอดสี</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="option-btn">
+			<a class="option-icon red" href="#">
+				<div class="icon"><img src="public/assets/app/img/icon/embed.svg" alt="Icon Main" /></div>
+				<div class="text">เมนูด่วน</div>
+				<div class="close"><img src="public/assets/app/img/icon/close.svg" alt="Icon Close" /></div>
+			</a>
+		</div>
+
+	</div>
+</nav>

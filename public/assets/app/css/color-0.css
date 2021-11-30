@@ -184,6 +184,22 @@ nav.sidenav .menu > a, nav.sidenav .item, nav.sidenav .item > a{color:#333333;}
 nav.sidenav .menu:hover > a, nav.sidenav .item:hover > a{color:#0a2471;}
 nav.sidenav .menu > em:hover{color:#0a2471;}
 
+/* Option Nav */
+nav.option-nav .option-icon{
+	background:#ffffff; color:#333333; box-shadow:inset 0 0 0 .5px #cecece;
+}
+nav.option-nav .option-btn.active > .option-icon{color:#ffffff;}
+nav.option-nav .option-icon::before{background:#0a2471;}
+nav.option-nav .option-icon.red::before{background:#a00a25;}
+nav.option-nav .dropdown{background:#ffffff;}
+nav.option-nav .dropdown .item{border-color:#cecece;}
+nav.option-nav .dropdown .item p{color:#000000;}
+nav.option-nav .dropdown .btn[data-theme="0"]{background:#f5f5f5; color:#0a2471;}
+nav.option-nav .dropdown .btn[data-theme="1"]{background:#000000; color:#ffffff;}
+nav.option-nav .dropdown .btn[data-theme="2"]{background:#000000; color:#ffff00;}
+nav.option-nav .dropdown .btn-font-size{color:#000000;}
+nav.option-nav .dropdown .btn-font-size.active{color:#ffffff; background:#99031e;}
+
 /* Footer */
 nav.footer{background:#ffffff; color:#333333;}
 nav.footer .footer-icon{color:#ffffff;}
@@ -283,9 +299,11 @@ nav.footer .v-line{background:#cdd5d5;}
 
 /* Special List */
 ul.ss-list > li > a{color:#333333;}
-ul.ss-list > li:hover > a{color:#0a2471;}
+ul.ss-list > li:hover > a, 
+ul.ss-list > li.active > *:first-child{color:#0a2471;}
 ul.ss-list > li::before{background:#afafaf;}
-ul.ss-list > li:hover::before{background:#0a2471;}
+ul.ss-list > li:hover::before, 
+ul.ss-list > li.active::before{background:#0a2471;}
 
 
 /* Special Pattern */
@@ -325,7 +343,7 @@ table.table-report tr.highlight > td:first-child{background:#f89609;}
 /* Banner 01 */
 .banner-01 .preview-wrapper{background:#ffffff;}
 .banner-01 .slick-current .preview-wrapper{background:#cad7ff;}
-.banner-01 .preview-wrapper > .img-bg{filter:blur(3px);}
+.banner-01 .preview-wrapper > .img-bg{filter:blur(1px);}
 .banner-01 .slick-current .preview-wrapper > .img-bg{filter:blur(0);}
 
 
@@ -342,6 +360,8 @@ table.table-report tr.highlight > td:first-child{background:#f89609;}
 .content-03{background-image:linear-gradient(to bottom,#ffffff,#f9f9f9);}
 .content-03 .panels > .panel-left{border-color:#dad7d7!important;}
 .content-03 .panels .v-line{background:#c7c7c7;}
+.content-03 .xtab{color:#333333;}
+.content-03 .xtab:hover, .content-03 .xtab.active{color:#0a2471;}
 
 
 /* Info 01 */

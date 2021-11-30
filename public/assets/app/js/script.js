@@ -60,6 +60,20 @@ $(function(){ 'use strict';
         });
     }
 
+    // Option Nav
+    var optionNav = $('nav.option-nav');
+    if(optionNav.length){
+        optionNav.find('.option-icon').click(function(e){
+            e.preventDefault();
+            $(this).parent().toggleClass('active');
+        });
+        var btnSets = optionNav.find('.btn-set a');
+        btnSets.click(function(){
+            btnSets.removeClass('active');
+            $(this).addClass('active');
+        });
+    }
+
     // Footer
     var footer = $('nav.footer');
     footer.find('.sep-wrapper').click(function(e){
@@ -241,12 +255,16 @@ $(function(){ 'use strict';
                 tabContents = self.find('.tab-contents > .tab-content');
             tabs.click(function(e){
                 e.preventDefault();
+                var temp = $(this);
                 tabs.removeClass('active');
-                $(this).addClass('active');
-                tabContents.removeClass('active');
-                var target = tabContents.filter('[data-tab="'+$(this).data('tab')+'"]');
+                temp.addClass('active');
+                tabContents.removeClass('active in');
+                var target = tabContents.filter('[data-tab="'+temp.data('tab')+'"]');
                 if(target.length){
-                    target.addClass('active');
+                    target.addClass('in');
+                    setTimeout(function(){
+                        target.addClass('active');
+                    }, 100);
                     var s = target.find('.slides');
                     if(s.length){
                         s.slick('setPosition');
@@ -336,6 +354,51 @@ $(function(){ 'use strict';
                     { breakpoint: 991.98, settings: { slidesToShow: 1, centerPadding: '40px' } },
                     { breakpoint: 767.98, settings: { slidesToShow: 1, centerPadding: '0' } },
                 ]
+            });
+        });
+    }
+
+    // Content 03
+    var content03 = $('.content-03');
+    if(content03.length){
+        content03.find('.panels').each(function(){
+            var self = $(this),
+                subtabs = self.find('.subtab'),
+                subtabContents = self.find('.subtab-contents > .subtab-content');
+            subtabs.click(function(e){
+                e.preventDefault();
+                var temp = $(this);
+                subtabs.removeClass('active');
+                temp.addClass('active');
+                subtabContents.removeClass('active in');
+                var target = subtabContents.filter('[data-subtab="'+temp.data('subtab')+'"]');
+                if(target.length){
+                    target.addClass('in');
+                    setTimeout(function(){
+                        target.addClass('active');
+                    }, 100);
+                }
+                AOS.refresh();
+            });
+        });
+        content03.find('.subtab-contents > .subtab-content').each(function(){
+            var self = $(this),
+                xtabs = self.find('.xtab'),
+                xtabContents = self.find('.xtab-content');
+            xtabs.click(function(e){
+                e.preventDefault();
+                var temp = $(this);
+                xtabs.removeClass('active');
+                temp.addClass('active');
+                xtabContents.removeClass('active in');
+                var target = xtabContents.filter('[data-xtab="'+temp.data('xtab')+'"]');
+                if(target.length){
+                    target.addClass('in');
+                    setTimeout(function(){
+                        target.addClass('active');
+                    }, 100);
+                }
+                AOS.refresh();
             });
         });
     }

@@ -106,71 +106,92 @@
 								</div>
 							<?php }?>
 						</div>
-						<?php foreach([1, 2, 3, 4] as $i=>$d){?>
-							<div class="tab-content <?php if($i==0)echo 'active'; ?>" data-tab="<?= $i ?>">
-								<div class="panels">
-									<div class="panel-left">
-										<ul class="ss-list color-theme-black">
-											<?php 
-												foreach([
-													'กฎหมายที่เกี่ยวข้อง', 'ศูนย์พัฒนาเด็ก', 'การศึกษาขั้นพื้นฐาน',
-													'การศึกษาขั้นพื้นฐานวัตถุประสงค์พิเศษ', 'กศน.', 'ด้านการอาชีวศึกษา',
-													'ระดับอุดมศึกษา'
-												] as $k){
-											?>
-												<li>
-													<a class="p sm fw-400 color-theme-black" href="#">
-														<?= $k ?>
-													</a>
-												</li>
-											<?php }?>
-										</ul>
-									</div>
-									<div class="panel-right">
-										<div class="d-flex ai-center fw-wrap">
-											<a class="p sm fw-500 color-gray h-color-01 color-theme-black" href="#">
-												ประกาศ
-											</a>
-											<div class="v-line ml-3 mr-3"></div>
-											<a class="p sm fw-500 color-gray h-color-01 color-theme-black" href="#">
-												เครื่องมือ/คู่มือ
-											</a>
-											<div class="v-line ml-3 mr-3"></div>
-											<a class="p sm fw-500 color-gray h-color-01 color-theme-black" href="#">
-												ผลประเมินภายนอก
-											</a>
+						<div class="tab-contents">
+							<?php foreach([1, 2, 3, 4] as $i=>$d){?>
+								<div class="tab-content <?php if($i==0)echo 'active'; ?>" data-tab="<?= $i ?>">
+									<div class="panels">
+										<div class="panel-left">
+											<ul class="ss-list color-theme-black">
+												<?php 
+													foreach([
+														'กฎหมายที่เกี่ยวข้อง', 'ศูนย์พัฒนาเด็ก', 'การศึกษาขั้นพื้นฐาน',
+														'การศึกษาขั้นพื้นฐานวัตถุประสงค์พิเศษ', 'กศน.', 'ด้านการอาชีวศึกษา',
+														'ระดับอุดมศึกษา'
+													] as $j=>$k){
+												?>
+													<li class="subtab <?php if($j==0)echo 'active'; ?>" data-subtab="<?= $i.'_'.$j ?>">
+														<p class="sm fw-400 color-theme-black">
+															<?= $k ?>
+														</p>
+													</li>
+												<?php }?>
+											</ul>
 										</div>
-										<div class="mt-6">
-											<div class="d-flex">
-												<div class="icon">
-													<img 
-														class="img-theme" width="36" 
-														src="public/assets/app/img/file/pdf.svg" alt="File Icon" 
-													/>
-												</div>
-												<div class="pl-4">
-													<a class="p xl fw-600 font-02 lh-nm color-black h-color-01 color-theme-black" href="#">
-														ประกาศที่ 353/2564
-													</a>
-													<p class="p lg fw-500 font-02 lh-nm">
-														การปรับจำนวนผู้ประเมินภายนอกสำหรับการประเมินคุณภาพภายนอกสถานศึกษา 
-														การศึกษาปฐมวัย (ศูนย์พัฒนาเด็ก) และ สถานศึกษาระดับการศึกษาขั้นพื้นฐาน
-													</p>
-												</div>
+										<div class="panel-right">
+											<div class="subtab-contents">
+												<?php 
+													foreach([
+														'กฎหมายที่เกี่ยวข้อง', 'ศูนย์พัฒนาเด็ก', 'การศึกษาขั้นพื้นฐาน',
+														'การศึกษาขั้นพื้นฐานวัตถุประสงค์พิเศษ', 'กศน.', 'ด้านการอาชีวศึกษา',
+														'ระดับอุดมศึกษา'
+													] as $j=>$k){
+												?>
+													<div class="subtab-content <?php if($j==0)echo 'active'; ?>" data-subtab="<?= $i.'_'.$j ?>">
+														<div class="d-flex ai-center fw-wrap">
+															<?php foreach([ 'ประกาศ', 'เครื่องมือ/คู่มือ', 'ผลประเมินภายนอก' ] as $n=>$m){?>
+																<?php if($n>0){?>
+																	<div class="v-line ml-3 mr-3"></div>
+																<?php }?>
+																<a 
+																	class="p sm fw-500 xtab <?php if($n==0)echo 'active'; ?>" 
+																	data-xtab="<?= $i.'_'.$j.'_'.$n ?>" href="#" 
+																>
+																	<?= $m ?>
+																</a>
+															<?php }?>
+														</div>
+														<div class="xtab-contents mt-6">
+															<?php foreach([ 'ประกาศ', 'เครื่องมือ/คู่มือ', 'ผลประเมินภายนอก' ] as $n=>$m){?>
+																<div 
+																	class="xtab-content <?php if($n==0)echo 'active'; ?>" 
+																	data-xtab="<?= $i.'_'.$j.'_'.$n ?>" 
+																>
+																	<div class="d-flex">
+																		<div class="icon">
+																			<img 
+																				class="img-theme" width="36" 
+																				src="public/assets/app/img/file/pdf.svg" alt="File Icon" 
+																			/>
+																		</div>
+																		<div class="pl-4">
+																			<a class="p xl fw-600 font-02 lh-nm color-black h-color-01 color-theme-black" href="#">
+																				ประกาศที่ 353/2564
+																			</a>
+																			<p class="p lg fw-500 font-02 lh-nm">
+																				การปรับจำนวนผู้ประเมินภายนอกสำหรับการประเมินคุณภาพภายนอกสถานศึกษา 
+																				การศึกษาปฐมวัย (ศูนย์พัฒนาเด็ก) และ สถานศึกษาระดับการศึกษาขั้นพื้นฐาน
+																			</p>
+																		</div>
+																	</div>
+																</div>
+															<?php }?>
+														</div>
+														<div class="mt-6 pt-2" style="padding-left:3.25rem;">
+															<a class="btn-more color-gray h-color-01 color-theme-black" href="#">
+																<p class="fw-400">ดูทั้งหมด</p> 
+																<div class="icon">
+																	<em class="zmdi zmdi-long-arrow-right"></em>
+																</div>
+															</a>
+														</div>
+													</div>
+												<?php }?>
 											</div>
-										</div>
-										<div class="mt-6 pt-2" style="padding-left:3.25rem;">
-											<a class="btn-more color-gray h-color-01 color-theme-black" href="#">
-												<p class="fw-400">ดูทั้งหมด</p> 
-												<div class="icon">
-													<em class="zmdi zmdi-long-arrow-right"></em>
-												</div>
-											</a>
 										</div>
 									</div>
 								</div>
-							</div>
-						<?php }?>
+							<?php }?>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -112,6 +112,16 @@
 .content-03 .panels .v-line{display:block; width:1.5px; height:.75rem;}
 .content-03 .panels .btn-more{display:flex; align-items:center;}
 .content-03 .panels .btn-more .icon{line-height:1; font-size:1.75rem; margin:0 0 0 .5rem;}
+
+.content-03 .subtab, .content-03 .xtab{cursor:pointer;}
+.content-03 .subtab-content, .content-03 .xtab-content{
+	display:none; position:relative; padding:0; margin:0; transition:opacity .25s;
+}
+.content-03 .subtab-content.in,
+.content-03 .xtab-content.in{display:block; opacity:0;}
+.content-03 .subtab-content.active,
+.content-03 .xtab-content.active{display:block; opacity:1;}
+
 @media screen and (max-width:1299.98px){
   .content-03 .bg-content{background-size:1380px auto;}
 }

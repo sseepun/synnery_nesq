@@ -122,6 +122,57 @@ nav.sidenav .menu ul.ss-list > li > a + .btn-icon{
 }
 
 
+/* Option Nav */
+nav.option-nav{position:fixed; top:calc(50vh - 150px);; right:0; z-index:96;}
+nav.option-nav > .wrapper{position:relative; width:150px;}
+nav.option-nav .option-btn{position:relative; width:150px; height:45px;}
+nav.option-nav .option-btn.active{z-index:1;}
+nav.option-nav .option-icon{
+	position:relative; width:100%; height:100%; display:flex; align-items:center;
+	transition:color .25s;
+}
+nav.option-nav .option-icon:not(:first-child){border-top:0;}
+nav.option-nav .option-icon::before{
+	content:''; position:absolute; top:0; bottom:0; left:0; width:45px; transition:width .3s;
+}
+nav.option-nav .option-btn.active > .option-icon::before{width:calc(100% - 28px);}
+nav.option-nav .option-icon > *{position:relative;}
+nav.option-nav .option-icon .icon{
+	display:flex; align-items:center; justify-content:center; width:45px; height:45px;
+}
+nav.option-nav .option-icon .icon img{
+	display:block; width:auto; max-width:56%; height:auto; max-height:56%; 
+}
+nav.option-nav .option-icon .text{padding:0 8px; font-size:14px; font-weight:400;}
+nav.option-nav .option-icon .close{
+	margin:0 0 0 auto; padding:0 8px; opacity:0; transition:opacity .25s;
+}
+nav.option-nav .option-btn.active > .option-icon .close{opacity:1;}
+nav.option-nav .option-icon .close img{display:block; width:12px; height:auto;}
+nav.option-nav .dropdown{
+	position:absolute; top:100%; left:0; right:0; pointer-events:none;
+	opacity:0; transition:opacity .25s;
+}
+nav.option-nav .option-btn.active > .dropdown{pointer-events:auto; opacity:1;}
+nav.option-nav .dropdown > .wrapper{display:block; width:100%;}
+nav.option-nav .dropdown .item{
+	width:100%; padding:10px 28px 10px 10px; border:1px solid transparent; border-top:0;
+}
+nav.option-nav .dropdown .item p{font-size:14px; font-weight:500;}
+nav.option-nav .dropdown .btns{margin:5px 0 0 0; display:flex; justify-content:space-between;}
+nav.option-nav .dropdown .btns:last-child{margin:2px 0 0 0;}
+nav.option-nav .dropdown .btn{
+	display:block; padding:6px 2px; text-align:center; font-size:12px; font-weight:500;
+	width:calc(50% - 1px);
+}
+nav.option-nav .dropdown .btn-font-size{
+	display:flex; align-items:center; justify-content:center; width:24px; height:40px;
+	font-size:16px; font-weight:400; transition:background .25s, color .25s;
+}
+nav.option-nav .dropdown .btn-font-size[data-size="13"]{font-size:13px;}
+nav.option-nav .dropdown .btn-font-size[data-size="20"]{font-size:20px;}
+
+
 /* Footer */
 nav.footer .top-container{position:relative; padding:1.5rem 0 2.5rem 0;}
 nav.footer .middle-container{position:relative; padding:1rem 0 2rem 0;}
