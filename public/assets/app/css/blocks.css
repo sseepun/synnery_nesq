@@ -194,7 +194,7 @@
 
 
 /* Section Counter */
-.section-counter{position:fixed; top:calc(50vh - 6rem); left:1rem; z-index:98;}
+.section-counter{position:fixed; top:calc(50vh - 6rem); left:1rem; z-index:93;}
 .section-counter > .wrapper{display:block; position:relative;}
 .section-counter .counter{
   position:relative; display:flex; padding:0 0 0 1rem;

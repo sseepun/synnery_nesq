@@ -21,7 +21,44 @@ $(function(){ 'use strict';
 
 
     // Topnav
-    var topnav = $('nav.topnav');
+    var topnav = $('nav.topnav'),
+        topnavMenus = topnav.find('.menu');
+    var megaNav = $('nav.mega-nav'),
+        megaWrappers = megaNav.find('.menu-wrapper');
+    if(topnav.length && megaNav.length){
+        topnavMenus.find('> a').click(function(e){
+            e.preventDefault();
+            let dataMenu = $(this).data('menu'),
+                parent = $(this).parent();
+            parent.siblings().removeClass('active');
+            if(parent.hasClass('active')){
+                parent.removeClass('active');
+                megaNav.find('> .anchor-container').slideUp();
+            }else{
+                parent.addClass('active');
+                megaNav.find('> .anchor-container').slideDown();
+                megaWrappers.removeClass('in active');
+                let target = megaWrappers.filter('[data-menu="'+dataMenu+'"]');
+                if(target.length){
+                    target.addClass('in');
+                    setTimeout(function(){
+                        target.addClass('active');
+                    }, 100);
+                }
+            }
+        });
+        megaNav.find('.btn-close').click(function(e){
+            e.preventDefault();
+            topnavMenus.removeClass('active');
+            megaNav.find('> .anchor-container').slideUp();
+        });
+        megaNav.find('.submenu-toggle').click(function(e){
+            e.preventDefault();
+            let parent = $(this).parent();
+            parent.toggleClass('active');
+            parent.find('> .submenu-container').slideToggle();
+        });
+    }
 
     // Sidenav
     var sidenav = $('nav.sidenav'),
@@ -49,14 +86,24 @@ $(function(){ 'use strict';
     if(topnav.length && sidenav.length){
         var sidenavMenus = sidenav.find('.menu-container');
         sidenavMenus.html( topnav.find('.menu-container').html() );
-        sidenavMenus.find('.has-children').each(function(){
-            $(this).append('<div class="dropdown-toggle"><em class="zmdi zmdi-chevron-right"></em></div>');
+        sidenavMenus.find('.menu.has-children').each(function(){
+            let self = $(this),
+                dataMenu = self.find('> a').data('menu'),
+                target = megaWrappers.filter('[data-menu="'+dataMenu+'"]');
+            if(target.length){
+                self.append('<div class="submenu-toggle"><em class="zmdi zmdi-chevron-down"></em></div>');
+                self.append('<div class="submenu-container"></div>');
+                let temp = self.find('.submenu-container');
+                target.find('.submenu').each(function(){
+                    temp.append($(this)[0].outerHTML);
+                });
+            }
         });
-        sidenavMenus.find('.dropdown-toggle').click(function(e){
+        sidenavMenus.find('.submenu-toggle').click(function(e){
             e.preventDefault();
-            var self = $(this);
-            self.toggleClass('active');
-            self.prev().slideToggle();
+            let parent = $(this).parent();
+            parent.toggleClass('active');
+            parent.find('> .submenu-container').slideToggle();
         });
     }
 
@@ -65,7 +112,9 @@ $(function(){ 'use strict';
     if(optionNav.length){
         optionNav.find('.option-icon').click(function(e){
             e.preventDefault();
-            $(this).parent().toggleClass('active');
+            let temp = $(this).parent();
+            temp.siblings().removeClass('active');
+            temp.toggleClass('active');
         });
         var btnSets = optionNav.find('.btn-set a');
         btnSets.click(function(){
@@ -165,9 +214,12 @@ $(function(){ 'use strict';
     // Quicklink Nav
     var quicklinkNav = $('.quicklink-nav');
     if(quicklinkNav.length){
-        quicklinkNav.find('.btn-main').click(function(e){
+        var quicklinkBtns = quicklinkNav.find('.btn-main');
+        quicklinkBtns.click(function(e){
             e.preventDefault();
+            $(this).siblings().remove
             quicklinkNav.toggleClass('active');
+            quicklinkBtns.not($)
         });
     }
 

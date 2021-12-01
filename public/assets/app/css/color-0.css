@@ -170,10 +170,22 @@ nav.topnav .option-btn{background:#e4e4e1; color:#000000;}
 nav.topnav .option-btn:hover{color:#0a2471;}
 nav.topnav .menu-container .menu::before{background:#c7c7c7;}
 nav.topnav .menu-container .menu > a{color:#333333;}
-nav.topnav .menu-container .menu:hover > a,
+nav.topnav .menu-container .menu:hover > a{color:#0a2471;}
 nav.topnav .menu-container .menu.active > a{background:#0a2471; color:#ffffff;}
 nav.topnav .hamburger > *{background:#000000;}
 nav.topnav .hamburger:hover > *{background:#0a2471;}
+
+/* Mega Nav */
+nav.mega-nav > .anchor-container{background:#ffffff;}
+nav.mega-nav .pattern svg{fill:#d9dfee;}
+nav.mega-nav .header{background:#e4f0f7; color:#0a2471;}
+nav.mega-nav .header .icon{color:#99031e;}
+nav.mega-nav .header .btn-close{background:#0a2471; color:#ffffff;}
+nav.mega-nav .submenu-set{border-color:#e4f0f7;}
+nav.mega-nav .submenu > a{color:#333333;}
+nav.mega-nav .submenu:hover > a{color:#0a2471;}
+nav.mega-nav .submenu > a::before{background:#0a2471;}
+nav.mega-nav .submenu-toggle{color:#ee0647;}
 
 /* Sidenav */
 nav.sidenav{background:#ffffff;}
@@ -183,6 +195,10 @@ nav.sidenav .scroll-wrapper, nav.sidenav .menu > a, nav.sidenav .item{border-col
 nav.sidenav .menu > a, nav.sidenav .item, nav.sidenav .item > a{color:#333333;}
 nav.sidenav .menu:hover > a, nav.sidenav .item:hover > a{color:#0a2471;}
 nav.sidenav .menu > em:hover{color:#0a2471;}
+nav.sidenav .submenu-toggle{color:#ee0647;}
+nav.sidenav .submenu-toggle:hover{background:#e4f0f7;}
+nav.sidenav .submenu > a{color:#333333; border-color:#e4e4e1;}
+nav.sidenav .submenu:hover > a{color:#0a2471;}
 
 /* Option Nav */
 nav.option-nav .option-icon{

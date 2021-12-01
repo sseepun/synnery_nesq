@@ -486,6 +486,7 @@ fieldset{width:100%; padding:0; margin:0; border:0;}
 
 
 /* Slide */
+body.loading .slide-container{display:none!important;}
 .slide-container .dots{width:100%; margin:0; padding:0;}
 .slide-container .slick-dots{
 	display:flex; align-items:center; justify-content:center; flex-wrap:wrap;
