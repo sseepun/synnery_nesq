@@ -213,7 +213,7 @@
 .section-counter .counter:last-child{padding-bottom:0!important;}
 .section-counter .counter:last-child::after{display:none;}
 .section-counter .counter > .text{
-  padding:.3125rem .625rem; font-size:.9375rem; font-weight:400;
+  padding:.25rem .5rem; font-size:.8125rem; font-weight:400;
   border-radius:1000em; transition:background .45s, color .45s;
 }
 @media screen and (max-width:1299.98px){
